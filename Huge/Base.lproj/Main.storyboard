@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Copernicus-Book.otf">
+            <string>Copernicus-Book</string>
+        </mutableArray>
+        <mutableArray key="Copernicus-BookItalic.otf">
+            <string>Copernicus-BookItalic</string>
+        </mutableArray>
+        <mutableArray key="huge_agb_v5.ttf">
+            <string>HUGE-AvantGarde-Bold</string>
+            <string>HUGE-AvantGarde-Bold</string>
+            <string>HUGE-AvantGarde-Bold</string>
+            <string>HUGE-AvantGarde-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Huge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +31,115 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input the amount of dollar you want to convert" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmW-Re-ery">
+                                <rect key="frame" x="16" y="208" width="568" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Copernicus-Book" family="Copernicus" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OeI-IG-lee"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display the converted Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck5-t8-xbX">
+                                <rect key="frame" x="185" y="286" width="229" height="54"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="QBm-PB-hho"/>
+                                    <constraint firstAttribute="height" constant="54" id="q2c-wz-f2R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copernicus-BookItalic" family="Copernicus" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="YNK-xY-wd6">
+                                <rect key="frame" x="20" y="59" width="74" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="bFB-Cg-JY0"/>
+                                    <constraint firstAttribute="height" constant="75" id="sau-G7-K50"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kof-Hl-cwu">
+                                <rect key="frame" x="190" y="399" width="220" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxP-q6-biv">
+                                        <rect key="frame" x="0.0" y="8" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="15"/>
+                                        <state key="normal" title="GBP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressGBPconverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNW-k0-4x2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsx-In-1Xy">
+                                        <rect key="frame" x="56" y="8" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="15"/>
+                                        <state key="normal" title="EUR">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressEURconverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ESh-po-LbD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-6o-8qg">
+                                        <rect key="frame" x="112" y="7" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="15"/>
+                                        <state key="normal" title="JPY">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressJPYconverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fCq-hX-wsv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-WY-RVT">
+                                        <rect key="frame" x="168" y="7" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HUGE-AvantGarde-Bold" family="HUGE Avant Garde" pointSize="15"/>
+                                        <state key="normal" title="BRL">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressBRLconverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysu-2R-STO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="7eg-rV-q8v"/>
+                                    <constraint firstAttribute="height" constant="62" id="mpY-KW-fYV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ck5-t8-xbX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="44d-zS-3r8"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YNK-xY-wd6" secondAttribute="leading" id="91U-vJ-IDP"/>
+                            <constraint firstItem="WmW-Re-ery" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ZBF-SQ-nro"/>
+                            <constraint firstItem="WmW-Re-ery" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a0C-Uj-MXs"/>
+                            <constraint firstItem="kof-Hl-cwu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c07-ee-44R"/>
+                            <constraint firstItem="ck5-t8-xbX" firstAttribute="top" secondItem="WmW-Re-ery" secondAttribute="bottom" constant="48" id="fht-db-Efy"/>
+                            <constraint firstItem="YNK-xY-wd6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="hWB-wu-VoH"/>
+                            <constraint firstAttribute="trailing" secondItem="WmW-Re-ery" secondAttribute="trailing" constant="16" id="kmh-i4-Q9D"/>
+                            <constraint firstItem="kof-Hl-cwu" firstAttribute="top" secondItem="ck5-t8-xbX" secondAttribute="bottom" constant="59" id="tym-Fa-ALd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kof-Hl-cwu" secondAttribute="bottom" constant="139" id="uo7-DH-8CU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="convertedLabel" destination="ck5-t8-xbX" id="dxX-xQ-VqU"/>
+                        <outlet property="inputDollarTextField" destination="WmW-Re-ery" id="Gfx-y1-QGt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="509" y="216"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="640" height="590"/>
+    </resources>
 </document>

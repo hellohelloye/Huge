@@ -43,5 +43,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Copernicus-Book.otf</string>
+		<string>Copernicus-BookItalic.otf</string>
+		<string>huge_agb_v5.ttf</string>
+	</array>
 </dict>
 </plist>
